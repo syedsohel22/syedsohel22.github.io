@@ -1,18 +1,41 @@
+import { Box } from "@chakra-ui/react";
 import React from "react";
-import About from "./About";
-import Contact from "./Contact";
-import Navbar from "./Navbar";
-import Projects from "./Projects";
-import Skills from "./Skills";
+
+import "./home.css";
 const Home = () => {
   return (
-    <div id="home">
-      <Navbar />
-      <Contact />
-      <About />
-      <Skills />
-      <Projects />
-    </div>
+    <Box id="home">
+      {/* <div style={{ border: "1px solid black" }}>
+        <div class="context">
+          <img
+            src="https://avatars.githubusercontent.com/u/83800834?v=4"
+            alt="img"
+          />
+          <h1>Sohel Syed </h1>
+
+          <p>
+            I am a Full stack web developer doing militry style coding and
+            learning MERN Stack at Masai School. I have done various group as
+            well as individual projects in my coding journey
+          </p>
+        </div>
+
+        <div class="area">
+          <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div> */}
+    </Box>
   );
 };
 

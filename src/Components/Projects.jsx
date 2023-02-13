@@ -1,9 +1,12 @@
-import React from 'react'
+import { Box } from "@chakra-ui/react";
+import React from "react";
 
 const Projects = () => {
   return (
-    <div id="projects">Projects</div>
-  )
-}
+    <Box id="projects" w={100}>
+      Projects
+    </Box>
+  );
+};
 
-export default Projects
+export default Projects;

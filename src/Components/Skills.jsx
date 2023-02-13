@@ -1,7 +1,12 @@
+import { Box } from "@chakra-ui/react";
 import React from "react";
 
 const Skills = () => {
-  return <div id="skills">Skills</div>;
+  return (
+    <Box id="skills" w={100}>
+      Skills
+    </Box>
+  );
 };
 
 export default Skills;

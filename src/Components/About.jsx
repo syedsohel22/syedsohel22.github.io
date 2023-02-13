@@ -1,10 +1,10 @@
 import React from "react";
-
+import { Box } from "@chakra-ui/react";
 const About = () => {
   return (
-    <div id="about" class="about section">
+    <Box id="about" className="about section" w={100}>
       About
-    </div>
+    </Box>
   );
 };
 
