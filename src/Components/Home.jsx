@@ -4,7 +4,7 @@ import React from "react";
 import "./home.css";
 const Home = () => {
   return (
-    <Box id="home">
+    <Box id="home" h="100vh">
       <Heading id="user-detail-name" fontSize={80} fontFamily={"old english"}>
         Sohel Syed
       </Heading>
