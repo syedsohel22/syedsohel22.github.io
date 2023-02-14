@@ -10,8 +10,10 @@ const Home = () => {
         <Box>
           <Heading
             id="user-detail-name"
-            fontSize={80}
-            fontFamily={"old english"}
+            bgGradient="linear(to-l, #0A8CF0 52%, #36FFFF 100%)"
+            bgClip="text"
+            fontSize="6xl"
+            fontWeight="extrabold"
           >
             Sohel Syed
           </Heading>
@@ -22,7 +24,7 @@ const Home = () => {
           className="home-img"
           src="https://avatars.githubusercontent.com/u/83800834?v=4"
           alt="sohel-syed"
-          borderRadius="50%"
+          borderRadius="62% 38% 29% 71% / 35% 43% 57% 65%  "
         />
       </Flex>
     </Box>

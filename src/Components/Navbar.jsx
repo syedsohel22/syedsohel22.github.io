@@ -8,9 +8,11 @@ import {
   Stack,
   useColorMode,
   Heading,
+  Link,
+  Text,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-
+import AnchorLink from "react-anchor-link-smooth-scroll";
 // const NavLink = () => (
 //   <Link
 //     px={2}
@@ -31,16 +33,36 @@ export default function Nav() {
   //const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Box bg={useColorModeValue("gray.100", "gray.900")} px={4} id="nav-menu">
+      <Box
+        bg={useColorModeValue("gray.100", "gray.900")}
+        px={4}
+        id="nav-menu"
+        position="fixed"
+        w="100%"
+        top={0}
+      >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <Heading>SOHEL</Heading>
           <Flex gap={4}>
-            <Box className="nav-link home">Home</Box>
-            <Box className="nav-link about">About</Box>
-            <Box className="nav-link skills">Skills</Box>
-            <Box className="nav-link projects">Projects</Box>
-            <Box className="nav-link contact">Contact</Box>
-            <Box className="nav-link resume">Resume</Box>
+            <AnchorLink href="#home">
+              <Text>Home</Text>
+            </AnchorLink>
+            <AnchorLink href="#about">
+              <Text className="nav-link about"> About</Text>
+            </AnchorLink>
+
+            <AnchorLink href="#skills">
+              <Text className="nav-link skills">Skills</Text>
+            </AnchorLink>
+            <AnchorLink href="#projects">
+              <Text className="nav-link projects">Projects</Text>
+            </AnchorLink>
+            <AnchorLink href="#contact">
+              <Text className="nav-link contact">Contact</Text>
+            </AnchorLink>
+            <AnchorLink href="">
+              <Text className="nav-link resume">Resume</Text>
+            </AnchorLink>
           </Flex>
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={7}>
