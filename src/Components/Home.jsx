@@ -5,8 +5,8 @@ import "./home.css";
 
 const Home = () => {
   return (
-    <Box id="home" h="100vh">
-      <Flex align="center" justify="center" gap={10} mt={10}>
+    <Box id="home" w="100%">
+      <Flex align="center" justify="center" gap={10} mt={200}>
         <Box>
           <Heading
             id="user-detail-name"

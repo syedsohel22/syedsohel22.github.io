@@ -3,9 +3,8 @@ import React from "react";
 
 const Skills = () => {
   return (
-    <Box id="skills" w="100vw" h="100vh" bg={"grey.200"}>
+    <Box id="skills" w="100%" bg={"grey.100"} mt={200}>
       Skills
-
     </Box>
   );
 };

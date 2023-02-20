@@ -8,8 +8,8 @@ const Contact = () => {
       alignItems="centers"
       justifyContent="center"
       w="100%"
-      h="100vh"
-      bg="gray.300"
+      mt={200}
+      bg="gray.100"
     >
       <Text id="contact-github">Github</Text>
       <Text id="contact-linkedin">LinkedIn</Text>
