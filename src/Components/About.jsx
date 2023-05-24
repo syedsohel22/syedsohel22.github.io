@@ -5,9 +5,7 @@ import { Box, Center, Heading, Img, Text } from "@chakra-ui/react";
 const About = () => {
   return (
     <Box id="about" className="about section" w="100%" bg="gray.200" mt={200}>
-      <Heading className="about section" id="about">
-        ABOUT
-      </Heading>
+      <Heading className="about section">ABOUT</Heading>
       <Text id="user-detail-name">Sohel Syed</Text>
       <Text id="user-detail-intro">
         Hello my Name is Sohel Syed I am a Full Stack Developer

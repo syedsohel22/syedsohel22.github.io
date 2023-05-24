@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Img } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Img } from "@chakra-ui/react";
 import React from "react";
 
 import "./home.css";
@@ -14,10 +14,14 @@ const Home = () => {
             bgClip="text"
             fontSize="6xl"
             fontWeight="extrabold"
+            className="about section"
           >
             Sohel Syed
           </Heading>
           <Heading id="user-detail-intro">A Full Stack Developer.!</Heading>
+          <a class="btn" href="../../downloads/Sohel-Syed-Resume" download>
+            <Button id="resume-button-2">Resume</Button>
+          </a>{" "}
         </Box>
 
         <Img
