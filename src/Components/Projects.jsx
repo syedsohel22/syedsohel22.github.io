@@ -13,6 +13,7 @@ const Projects = () => {
   return (
     <Center id="projects" w="90%" m="auto">
       {/* project-1 */}
+
       <SimpleGrid minChildWidth="120px" spacing="10px">
         <Box className="project-card" border={"1px solid grey"} p={5}>
           <Image

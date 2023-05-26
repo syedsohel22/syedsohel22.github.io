@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Heading, Img } from "@chakra-ui/react";
 import React from "react";
-
+import myresume from "../downloads/Sohel-Syed-Resume.pdf";
 import "./home.css";
 
 const Home = () => {
@@ -19,8 +19,19 @@ const Home = () => {
             Sohel Syed
           </Heading>
           <Heading id="user-detail-intro">A Full Stack Developer.!</Heading>
-          <a class="btn" href="../../downloads/Sohel-Syed-Resume" download>
-            <Button id="resume-button-2">Resume</Button>
+          <a
+            id="resume-link-2"
+            href={myresume}
+            download="Sohel-Syed-Resume.pdf"
+            onClick={() => {
+              window.open(
+                "https://drive.google.com/file/d/1BQS12moCHECzWVibbiqGVVUZzCxFzvMS/view?usp=share_link"
+              );
+            }}
+          >
+            <Button  id="resume-button-2">
+              Resume
+            </Button>
           </a>{" "}
         </Box>
 
