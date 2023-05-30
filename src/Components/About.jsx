@@ -5,11 +5,16 @@ import { Box, Center, Heading, Img, Text } from "@chakra-ui/react";
 const About = () => {
   return (
     <Box id="about" className="about section" w="100%" bg="gray.200" mt={200}>
-      <Heading className="about section">ABOUT</Heading>
+      <Heading className="about section">About Me</Heading>
       <Text id="user-detail-name">Sohel Syed</Text>
       <Text id="user-detail-intro">
-        Hello my Name is Sohel Syed I am a Full Stack Developer
+        <span> Hello my Name is Sohel Syed I am a Full Stack Developer</span>
+        An enthusiastic Full-stack Developer, skilled in React.js. Developing
+        websites using JavaScript, Node.js, Express.js, MongoDB. An optimistic
+        man, always ready to take a critical decision, ready to work under
+        pressure. Always ready to try some new things for optimization.
       </Text>
+      <Text></Text>
       <Center p={26} mt={200}>
         <GitHubCalendar
           username="syedsohel22"

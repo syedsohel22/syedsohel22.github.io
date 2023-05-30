@@ -21,6 +21,7 @@ const Home = () => {
           <Heading id="user-detail-intro">A Full Stack Developer.!</Heading>
           <a
             id="resume-link-2"
+            
             href={myresume}
             download="Sohel-Syed-Resume.pdf"
             onClick={() => {
@@ -29,7 +30,7 @@ const Home = () => {
               );
             }}
           >
-            <Button  id="resume-button-2">
+            <Button  id="resume-button-2" >
               Resume
             </Button>
           </a>{" "}
