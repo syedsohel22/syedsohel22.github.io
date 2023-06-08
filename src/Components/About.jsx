@@ -1,7 +1,7 @@
 import React from "react";
 import GitHubCalendar from "react-github-calendar";
-import { Box, Center, Heading, Img, Text } from "@chakra-ui/react";
-
+import { Box, Button, Center, Heading, Img, Text } from "@chakra-ui/react";
+import myresume from "../downloads/Sohel-Syed-Resume.pdf";
 const About = () => {
   return (
     <Box id="about" className="about section" w="100%" bg="gray.200" mt={200}>
@@ -15,6 +15,21 @@ const About = () => {
         pressure. Always ready to try some new things for optimization.
       </Text>
       <Text></Text>
+      <Button id="resume-button-2">
+        {" "}
+        <a
+          id="resume-link-2"
+          href={myresume}
+          download="Sohel-Syed-Resume.pdf"
+          onClick={() => {
+            window.open(
+              "https://drive.google.com/file/d/1BQS12moCHECzWVibbiqGVVUZzCxFzvMS/view?usp=share_link"
+            );
+          }}
+        >
+          Resume
+        </a>
+      </Button>{" "}
       <Center p={26} mt={200}>
         <GitHubCalendar
           username="syedsohel22"
