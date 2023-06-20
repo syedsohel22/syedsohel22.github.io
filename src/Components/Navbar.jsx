@@ -43,21 +43,24 @@ export default function Nav() {
               <Text className="nav-link contact">Contact</Text>
             </AnchorLink>
             {/* Resume */}
-            <a
-              id="resume-link-1"
+            <Button
               className="nav-link resume"
-              href={myresume}
-              download="Sohel-Syed-Resume.pdf"
+              id="resume-button-1"
               onClick={() => {
                 window.open(
                   "https://drive.google.com/file/d/1BQS12moCHECzWVibbiqGVVUZzCxFzvMS/view?usp=share_link"
                 );
               }}
             >
-              <Button className="nav-link resume" id="resume-button-1">
+              <a
+                id="resume-link-1"
+                className="nav-link resume"
+                href={myresume}
+                download="Sohel-Syed-Resume.pdf"
+              >
                 Resume
-              </Button>
-            </a>{" "}
+              </a>{" "}
+            </Button>
           </Flex>
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={7}>
@@ -71,4 +74,3 @@ export default function Nav() {
     </>
   );
 }
-
