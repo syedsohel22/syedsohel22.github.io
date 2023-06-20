@@ -29,7 +29,7 @@ const About = () => {
         }}
       >
         {" "}
-        <a href={myresume} download="Sohel-Syed-Resume.pdf">
+        <a id="resume-link-2" href={myresume} download="Sohel-Syed-Resume.pdf">
           Resume
         </a>
       </Button>{" "}
