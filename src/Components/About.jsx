@@ -19,19 +19,17 @@ const About = () => {
         pressure. Always ready to try some new things for optimization. <br />
       </Text>
       <Text></Text>
-      <Button id="resume-button-2">
+      <Button
+        id="resume-button-2"
+        onClick={() => {
+          window.open(
+            "https://drive.google.com/file/d/1BQS12moCHECzWVibbiqGVVUZzCxFzvMS/view?usp=share_link",
+            "_blank"
+          );
+        }}
+      >
         {" "}
-        <a
-          id="resume-link-2"
-          href={myresume}
-          download="Sohel-Syed-Resume.pdf"
-          onClick={() => {
-            window.open(
-              "https://drive.google.com/file/d/1BQS12moCHECzWVibbiqGVVUZzCxFzvMS/view?usp=share_link",
-              "_blank"
-            );
-          }}
-        >
+        <a href={myresume} download="Sohel-Syed-Resume.pdf">
           Resume
         </a>
       </Button>{" "}
