@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import myresume from "../downloads/Sohel-Syed-Resume.pdf";
+import myresume from "../downloads/Sohel_Syed_Resume.pdf";
 export default function Nav() {
   const { colorMode, toggleColorMode } = useColorMode();
 

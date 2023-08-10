@@ -1,7 +1,7 @@
 import React from "react";
 import GitHubCalendar from "react-github-calendar";
 import { Box, Button, Center, Heading, Img, Text } from "@chakra-ui/react";
-import myresume from "../downloads/Sohel-Syed-Resume.pdf";
+import myresume from "../downloads/Sohel_Syed_Resume.pdf";
 const About = () => {
   return (
     <Box id="about" className="about section" w="100%" bg="gray.200" mt={200}>
