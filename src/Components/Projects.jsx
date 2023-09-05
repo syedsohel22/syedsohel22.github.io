@@ -223,13 +223,14 @@ import React from "react";
 
 const projectData = [
   {
-    title: "Project 1",
+    title: "Health Prime - Clone of TATA 1mg.com",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam venenatis ligula nec magna gravida, a tempus est euismod.",
-    techStack: ["HTML", "CSS", "JavaScript"],
-    githubLink: "https://github.com/example/project1",
-    deployedLink: "https://example-project1.netlify.app/",
-    imageSrc: "https://via.placeholder.com/300x200",
+      "Health Prime helps you to buy medicines online and get them delivered at your doorstep anywhere in India!.",
+    techStack: ["Next.js", "Chakra-UI", "Redux", "Json-server"],
+    githubLink: "https://github.com/syedsohel22/Tata-1mg-clone",
+    deployedLink: "https://roasted-geese-6392-xh5g.vercel.app/",
+    imageSrc:
+      "https://user-images.githubusercontent.com/112754116/222733399-cc8c0c6d-aae6-4e9f-ad45-e4f42ddd1ef5.png",
     flip: false,
   },
   {
@@ -298,8 +299,13 @@ const ProjectCard = ({
       boxShadow="md"
       p={6}
       bg="white"
+      id="projects"
     >
-      <Box flex={1} order={imageSide === "left" ? 1 : 2}>
+      <Box
+        flex={1}
+        order={imageSide === "left" ? 1 : 2}
+        className="project-card"
+      >
         <Image src={imageSrc} alt={title} maxW="100%" boxShadow="lg" />
       </Box>
       <Box flex={1} p={[4, 6]} order={detailsSide === "left" ? 1 : 2}>
