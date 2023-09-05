@@ -109,15 +109,7 @@
 
 // export default Skills;
 
-import {
-  Box,
-  Flex,
-  Heading,
-  Image,
-  Text,
-  Wrap,
-  WrapItem,
-} from "@chakra-ui/react";
+import { Box, Heading, Image, Text, Wrap, WrapItem } from "@chakra-ui/react";
 import React from "react";
 
 const Skills = () => {
@@ -183,18 +175,26 @@ const SkillCard = ({ src, alt, name }) => {
   return (
     <WrapItem>
       <Box
+        className="skills-card"
         borderWidth="1px"
         borderColor="black"
         borderRadius="md"
         p={3}
         textAlign="center"
-        minW="120px"
+        minW="150px"
         transition="transform 0.3s"
-        className="skills-card"
         _hover={{ transform: "scale(1.05)" }}
       >
-        <Image src={src} alt={alt} boxSize="60px" mx="auto" />
-        <Text mt={2}>{name}</Text>
+        <Image
+          className="skills-card-img"
+          src={src}
+          alt={alt}
+          boxSize="60px"
+          mx="auto"
+        />
+        <Text mt={2} className="skills-card-name">
+          {name}
+        </Text>
       </Box>
     </WrapItem>
   );

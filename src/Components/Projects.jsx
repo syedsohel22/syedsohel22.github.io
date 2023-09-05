@@ -273,7 +273,7 @@ const Projects = () => {
     <Center id="projects" py={10} bg="gray.100">
       <SimpleGrid columns={[1, 1, 2]} spacing={6} w="90%" m="auto">
         {projectData.map((project, index) => (
-          <ProjectCard className="project-card" key={index} {...project} />
+          <ProjectCard key={index} {...project} />
         ))}
       </SimpleGrid>
     </Center>
@@ -294,18 +294,14 @@ const ProjectCard = ({
 
   return (
     <Flex
+      className="project-card"
       direction={["column", "column", "row"]}
       alignItems="center"
       boxShadow="md"
       p={6}
       bg="white"
-      id="projects"
     >
-      <Box
-        flex={1}
-        order={imageSide === "left" ? 1 : 2}
-        className="project-card"
-      >
+      <Box flex={1} order={imageSide === "left" ? 1 : 2}>
         <Image src={imageSrc} alt={title} maxW="100%" boxShadow="lg" />
       </Box>
       <Box flex={1} p={[4, 6]} order={detailsSide === "left" ? 1 : 2}>
