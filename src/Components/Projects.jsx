@@ -268,12 +268,12 @@ const projectData = [
   // Add more project data objects here for additional projects
 ];
 
-const Portfolio = () => {
+const Projects = () => {
   return (
-    <Center id="portfolio" py={10} bg="gray.100">
+    <Center id="projects" py={10} bg="gray.100">
       <SimpleGrid columns={[1, 1, 2]} spacing={6} w="90%" m="auto">
         {projectData.map((project, index) => (
-          <ProjectCard key={index} {...project} />
+          <ProjectCard className="project-card" key={index} {...project} />
         ))}
       </SimpleGrid>
     </Center>
@@ -309,16 +309,24 @@ const ProjectCard = ({
         <Image src={imageSrc} alt={title} maxW="100%" boxShadow="lg" />
       </Box>
       <Box flex={1} p={[4, 6]} order={detailsSide === "left" ? 1 : 2}>
-        <Heading size="md">{title}</Heading>
-        <Text mt={2}>{description}</Text>
-        <Text mt={3} fontWeight="bold">
-          Tech Stack: {techStack.join(" • ")}
+        <Heading size="md" className="project-title">
+          {title}
+        </Heading>
+        <Text mt={2} className="project-description">
+          {description}
         </Text>
-        <Flex mt={3}>
+        <Text mt={3} fontWeight="bold" className="project-tech-stack">
+          Tech Stack: {techStack.join(" | ")}
+        </Text>
+        <Flex mt={3} className="project-github-link">
           <Link href={githubLink} mr={3} fontSize="lg">
             <FaGithub />
           </Link>
-          <Link href={deployedLink} fontSize="lg">
+          <Link
+            href={deployedLink}
+            fontSize="lg"
+            className="project-deployed-link"
+          >
             <FaExternalLinkAlt />
           </Link>
         </Flex>
@@ -327,4 +335,4 @@ const ProjectCard = ({
   );
 };
 
-export default Portfolio;
+export default Projects;
