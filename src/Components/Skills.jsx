@@ -190,6 +190,7 @@ const SkillCard = ({ src, alt, name }) => {
         textAlign="center"
         minW="120px"
         transition="transform 0.3s"
+        className="skills-card"
         _hover={{ transform: "scale(1.05)" }}
       >
         <Image src={src} alt={alt} boxSize="60px" mx="auto" />
