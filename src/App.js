@@ -6,6 +6,7 @@ import Navbar from "./Components/Navbar";
 import Projects from "./Components/Projects";
 import Skills from "./Components/Skills";
 import TestNavbar from "./Components/TestNavbar";
+import Github from "./Components/Github";
 function App() {
   return (
     <div className="App">
@@ -13,6 +14,7 @@ function App() {
       <TestNavbar />
       <Home />
       <About />
+      <Github />
       <Skills />
       <Projects />
       <Contact />

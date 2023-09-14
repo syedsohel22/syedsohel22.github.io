@@ -73,7 +73,7 @@ export default function TestNavbar() {
           direction={"row"}
           spacing={6}
         >
-          <Button
+          {/* <Button
             as={"a"}
             fontSize={"sm"}
             fontWeight={400}
@@ -81,6 +81,27 @@ export default function TestNavbar() {
             href={"#"}
           >
             Resume
+          </Button> */}
+          <Button
+            fontSize={"sm"}
+            fontWeight={400}
+            variant={"link"}
+            className="nav-link resume"
+            id="resume-button-1"
+            onClick={() => {
+              window.open(
+                "https://drive.google.com/file/d/1BQS12moCHECzWVibbiqGVVUZzCxFzvMS/view?usp=share_link"
+              );
+            }}
+          >
+            <a
+              id="resume-link-1"
+              className="nav-link resume"
+              href={myresume}
+              download="Sohel-Syed-Resume.pdf"
+            >
+              Resume
+            </a>{" "}
           </Button>
           {/* <Button
             as={"a"}

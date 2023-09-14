@@ -1,26 +1,11 @@
-import {
-  Box,
-  Flex,
-  Button,
-  useColorModeValue,
-  useColorMode,
-  Heading,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Flex, Button, Heading, Text } from "@chakra-ui/react";
 
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import myresume from "../downloads/Sohel_Syed_Resume.pdf";
 
 export default function Nav() {
   return (
-    <Box
-      bg={useColorModeValue("gray.100", "gray.900")}
-      px={4}
-      id="nav-menu"
-      position="fixed"
-      w="100%"
-      top={0}
-    >
+    <Box bg={"gray.100"} px={4} id="nav-menu" position="fixed" w="100%" top={0}>
       <Flex
         h={16}
         alignItems={["center", "center", "flex-start"]}
