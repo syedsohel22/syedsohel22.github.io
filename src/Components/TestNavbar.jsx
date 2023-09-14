@@ -16,6 +16,7 @@ import {
 } from "@chakra-ui/react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import myresume from "../downloads/Sohel_Syed_Resume.pdf";
+
 import {
   HamburgerIcon,
   CloseIcon,
@@ -73,15 +74,6 @@ export default function TestNavbar() {
           direction={"row"}
           spacing={6}
         >
-          {/* <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"#"}
-          >
-            Resume
-          </Button> */}
           <Button
             fontSize={"sm"}
             fontWeight={400}
@@ -103,20 +95,6 @@ export default function TestNavbar() {
               Resume
             </a>{" "}
           </Button>
-          {/* <Button
-            as={"a"}
-            display={{ base: "none", md: "inline-flex" }}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"white"}
-            bg={"pink.400"}
-            href={"#"}
-            _hover={{
-              bg: "pink.300",
-            }}
-          >
-            Sign Up
-          </Button> */}
         </Stack>
       </Flex>
 
@@ -131,7 +109,7 @@ const DesktopNav = () => {
   const linkColor = useColorModeValue("gray.600", "gray.200");
   const linkHoverColor = useColorModeValue("gray.800", "white");
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
-  const { isOpen, onToggle } = useDisclosure();
+  const { isOpen, onToggle, onClose } = useDisclosure();
   return (
     <Stack direction={"row"} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
@@ -162,13 +140,7 @@ const DesktopNav = () => {
                 p={4}
                 rounded={"xl"}
                 minW={"sm"}
-              >
-                {/* <Stack>
-                  {navItem.children.map((child) => (
-                    <DesktopSubNav key={child.label} {...child} />
-                  ))}
-                </Stack> */}
-              </PopoverContent>
+              ></PopoverContent>
             )}
           </Popover>
         </Box>
@@ -177,96 +149,156 @@ const DesktopNav = () => {
   );
 };
 
-// const DesktopSubNav = ({ label, href, subLabel }) => {
+// const MobileNav = ({ onToggle, isOpen }) => {
 //   return (
-//     <Box
-//       as="a"
-//       href={href}
-//       role={"group"}
-//       display={"block"}
-//       p={2}
-//       rounded={"md"}
-//       _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
+//     <Stack
+//       bg={useColorModeValue("white", "gray.800")}
+//       p={4}
+//       display={{ md: "none" }}
 //     >
-//       <Stack direction={"row"} align={"center"}>
-//         <Box>
-//           <Text
-//             transition={"all .3s ease"}
-//             _groupHover={{ color: "pink.400" }}
-//             fontWeight={500}
-//           >
-//             {label}
-//           </Text>
-//           <Text fontSize={"sm"}>{subLabel}</Text>
+//       {NAV_ITEMS.map((navItem) => (
+//         <Box onClick={onToggle} key={navItem.label}>
+//           <MobileNavItem key={navItem.label} {...navItem} onToggle={onToggle} />
 //         </Box>
-//         <Flex
-//           transition={"all .3s ease"}
-//           transform={"translateX(-10px)"}
-//           opacity={0}
-//           _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
-//           justify={"flex-end"}
-//           align={"center"}
-//           flex={1}
-//         >
-//           <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
-//         </Flex>
-//       </Stack>
-//     </Box>
+//       ))}
+//     </Stack>
 //   );
 // };
 
+// const MobileNavItem = ({ label, children, href, onToggle, isOpen }) => {
+//   return (
+//     <Stack spacing={4} onClick={children && onToggle}>
+//       <Box
+//         py={2}
+//         href={href ?? "#"}
+//         justifyContent="space-between"
+//         alignItems="center"
+//         _hover={{
+//           textDecoration: "none",
+//         }}
+//       >
+//         <Text
+//           fontWeight={600}
+//           color={useColorModeValue("gray.600", "gray.200")}
+//         >
+//           {label}
+//         </Text>
+//         {children && (
+//           <Icon
+//             as={ChevronDownIcon}
+//             transition={"all .25s ease-in-out"}
+//             transform={isOpen ? "rotate(180deg)" : ""}
+//             w={6}
+//             h={6}
+//           />
+//         )}
+//       </Box>
+
+//       <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
+//         <Stack
+//           mt={2}
+//           pl={4}
+//           borderLeft={1}
+//           borderStyle={"solid"}
+//           borderColor={useColorModeValue("gray.200", "gray.700")}
+//           align={"start"}
+//         >
+//           {children &&
+//             children.map((child) => (
+//               <Box as="a" key={child.label} py={2} href={child.href}>
+//                 {child.label}
+//               </Box>
+//             ))}
+//         </Stack>
+//       </Collapse>
+//     </Stack>
+//   );
+// };
+
+// const NAV_ITEMS = [
+//   {
+//     label: "Home",
+//     href: "#home",
+//   },
+//   {
+//     label: "About",
+//     href: "#about",
+//   },
+//   {
+//     label: "Skills",
+//     href: "#skills",
+//   },
+//   {
+//     label: "Projects",
+//     href: "#projects",
+//   },
+//   {
+//     label: "Contact",
+//     href: "#contact",
+//   },
+// ];
+
 const MobileNav = ({ onToggle, isOpen }) => {
   return (
-    <Stack
+    <Box
+      overflowY="auto"
+      maxH="calc(100vh - 60px)" // Adjust the height as needed
       bg={useColorModeValue("white", "gray.800")}
       p={4}
       display={{ md: "none" }}
     >
       {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} onToggle={onToggle} />
+        <Box key={navItem.label}>
+          <MobileNavItem key={navItem.label} {...navItem} onToggle={onToggle} />
+        </Box>
       ))}
-    </Stack>
+    </Box>
   );
 };
 
 const MobileNavItem = ({ label, children, href, onToggle, isOpen }) => {
+  const handleClick = ( children ) => {
+    onToggle(); // Close the menu when a link is clicked
+    children()
+  };
   return (
-    <Stack spacing={4} onClick={children && onToggle}>
-      <Box
-        py={2}
-        as="a"
-        href={href ?? "#"}
-        justifyContent="space-between"
-        alignItems="center"
-        _hover={{
-          textDecoration: "none",
-        }}
-      >
-        <Text
-          fontWeight={600}
-          color={useColorModeValue("gray.600", "gray.200")}
+    <Box onClick={handleClick}>
+      <AnchorLink href={href || "#"} offset="60">
+        {" "}
+        {/* Use AnchorLink */}
+        <Box
+          py={2}
+          justifyContent="space-between"
+          alignItems="center"
+          _hover={{
+            textDecoration: "none",
+          }}
         >
-          {label}
-        </Text>
-        {children && (
-          <Icon
-            as={ChevronDownIcon}
-            transition={"all .25s ease-in-out"}
-            transform={isOpen ? "rotate(180deg)" : ""}
-            w={6}
-            h={6}
-          />
-        )}
-      </Box>
+          <Text
+            fontWeight={600}
+            color={useColorModeValue("gray.600", "gray.200")}
+          >
+            {label}
+          </Text>
+          {children && (
+            <Icon
+              as={ChevronDownIcon}
+              transition="all .25s ease-in-out"
+              transform={isOpen ? "rotate(180deg)" : ""}
+              w={6}
+              h={6}
+            />
+          )}
+        </Box>
+      </AnchorLink>
 
       <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
-        <Stack
+        <Box
           mt={2}
           pl={4}
           borderLeft={1}
-          borderStyle={"solid"}
+          borderStyle="solid"
           borderColor={useColorModeValue("gray.200", "gray.700")}
-          align={"start"}
         >
           {children &&
             children.map((child) => (
@@ -274,9 +306,9 @@ const MobileNavItem = ({ label, children, href, onToggle, isOpen }) => {
                 {child.label}
               </Box>
             ))}
-        </Stack>
+        </Box>
       </Collapse>
-    </Stack>
+    </Box>
   );
 };
 

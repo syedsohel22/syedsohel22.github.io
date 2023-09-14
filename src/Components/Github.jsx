@@ -1,20 +1,33 @@
-import { Center, HStack, Img } from "@chakra-ui/react";
+import { Center, HStack, Img, Stack, color } from "@chakra-ui/react";
 import React from "react";
 import GitHubCalendar from "react-github-calendar";
 
 const Github = () => {
   return (
-    <>
-      <Center p={10} mt={200} border={"1px solid black"} m={"auto"} w={"80%"}>
+    <Stack w={"80%"} m={"auto"} placeContent={"center"} py={20} gap={6}>
+      <Center
+        // mt={200}
+        borderWidth="1px"
+        borderColor="black"
+        borderRadius="md"
+        p={3}
+        m={"auto"}
+        w={"80%"}
+        gap={6}
+      >
         <GitHubCalendar
           username="syedsohel22"
           align="center"
           fontSize={13}
-          p="10"
-          mt={200}
         ></GitHubCalendar>
       </Center>
-      <HStack w={"80%"} h={"100vh"} justifyContent={"center"} m={"auto"}>
+      <Stack
+        justifyContent={"center"}
+        direction={{ base: "column", md: "row" }}
+        alignItems={"center"}
+        maxWidth={"auto"}
+        gap={6}
+      >
         <p>
           <Img
             align="center"
@@ -40,8 +53,8 @@ const Github = () => {
             id="github-streak-stats"
           />
         </p>
-      </HStack>
-    </>
+      </Stack>
+    </Stack>
   );
 };
 

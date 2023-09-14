@@ -11,8 +11,8 @@ const About = () => {
       bg="gray.200"
       mt={200}
       alignItems={"center"}
-      minH={"100vh"}
       justifyContent={"center"}
+      py={20}
     >
       <Stack alignItems={"center"}>
         <Heading className="about section" textAlign={"center"}>

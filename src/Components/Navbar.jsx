@@ -53,13 +53,7 @@ export default function Nav() {
             </a>{" "}
           </Button>
         </Flex>
-        {/* <Flex alignItems={"center"}>
-          <Stack direction={"row"} spacing={7}>
-            <Button onClick={toggleColorMode}>
-              {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-            </Button>
-          </Stack>
-        </Flex> */}
+    
       </Flex>
     </Box>
   );
