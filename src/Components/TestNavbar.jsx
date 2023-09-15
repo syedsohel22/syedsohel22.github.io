@@ -149,156 +149,59 @@ const DesktopNav = () => {
   );
 };
 
-// const MobileNav = ({ onToggle, isOpen }) => {
-//   return (
-//     <Stack
-//       bg={useColorModeValue("white", "gray.800")}
-//       p={4}
-//       display={{ md: "none" }}
-//     >
-//       {NAV_ITEMS.map((navItem) => (
-//         <Box onClick={onToggle} key={navItem.label}>
-//           <MobileNavItem key={navItem.label} {...navItem} onToggle={onToggle} />
-//         </Box>
-//       ))}
-//     </Stack>
-//   );
-// };
-
-// const MobileNavItem = ({ label, children, href, onToggle, isOpen }) => {
-//   return (
-//     <Stack spacing={4} onClick={children && onToggle}>
-//       <Box
-//         py={2}
-//         href={href ?? "#"}
-//         justifyContent="space-between"
-//         alignItems="center"
-//         _hover={{
-//           textDecoration: "none",
-//         }}
-//       >
-//         <Text
-//           fontWeight={600}
-//           color={useColorModeValue("gray.600", "gray.200")}
-//         >
-//           {label}
-//         </Text>
-//         {children && (
-//           <Icon
-//             as={ChevronDownIcon}
-//             transition={"all .25s ease-in-out"}
-//             transform={isOpen ? "rotate(180deg)" : ""}
-//             w={6}
-//             h={6}
-//           />
-//         )}
-//       </Box>
-
-//       <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
-//         <Stack
-//           mt={2}
-//           pl={4}
-//           borderLeft={1}
-//           borderStyle={"solid"}
-//           borderColor={useColorModeValue("gray.200", "gray.700")}
-//           align={"start"}
-//         >
-//           {children &&
-//             children.map((child) => (
-//               <Box as="a" key={child.label} py={2} href={child.href}>
-//                 {child.label}
-//               </Box>
-//             ))}
-//         </Stack>
-//       </Collapse>
-//     </Stack>
-//   );
-// };
-
-// const NAV_ITEMS = [
-//   {
-//     label: "Home",
-//     href: "#home",
-//   },
-//   {
-//     label: "About",
-//     href: "#about",
-//   },
-//   {
-//     label: "Skills",
-//     href: "#skills",
-//   },
-//   {
-//     label: "Projects",
-//     href: "#projects",
-//   },
-//   {
-//     label: "Contact",
-//     href: "#contact",
-//   },
-// ];
-
 const MobileNav = ({ onToggle, isOpen }) => {
   return (
-    <Box
-      overflowY="auto"
-      maxH="calc(100vh - 60px)" // Adjust the height as needed
+    <Stack
       bg={useColorModeValue("white", "gray.800")}
       p={4}
       display={{ md: "none" }}
     >
       {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
+        <Box onClick={onToggle} key={navItem.label}>
           <MobileNavItem key={navItem.label} {...navItem} onToggle={onToggle} />
         </Box>
       ))}
-    </Box>
+    </Stack>
   );
 };
 
 const MobileNavItem = ({ label, children, href, onToggle, isOpen }) => {
-  const handleClick = ( children ) => {
-    onToggle(); // Close the menu when a link is clicked
-    children()
-  };
   return (
-    <Box onClick={handleClick}>
-      <AnchorLink href={href || "#"} offset="60">
-        {" "}
-        {/* Use AnchorLink */}
-        <Box
-          py={2}
-          justifyContent="space-between"
-          alignItems="center"
-          _hover={{
-            textDecoration: "none",
-          }}
+    <Stack spacing={4} onClick={children && onToggle}>
+      <Box
+        py={2}
+        href={href ?? "#"}
+        justifyContent="space-between"
+        alignItems="center"
+        _hover={{
+          textDecoration: "none",
+        }}
+      >
+        <Text
+          fontWeight={600}
+          color={useColorModeValue("gray.600", "gray.200")}
         >
-          <Text
-            fontWeight={600}
-            color={useColorModeValue("gray.600", "gray.200")}
-          >
-            {label}
-          </Text>
-          {children && (
-            <Icon
-              as={ChevronDownIcon}
-              transition="all .25s ease-in-out"
-              transform={isOpen ? "rotate(180deg)" : ""}
-              w={6}
-              h={6}
-            />
-          )}
-        </Box>
-      </AnchorLink>
+          {label}
+        </Text>
+        {children && (
+          <Icon
+            as={ChevronDownIcon}
+            transition={"all .25s ease-in-out"}
+            transform={isOpen ? "rotate(180deg)" : ""}
+            w={6}
+            h={6}
+          />
+        )}
+      </Box>
 
       <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
-        <Box
+        <Stack
           mt={2}
           pl={4}
           borderLeft={1}
-          borderStyle="solid"
+          borderStyle={"solid"}
           borderColor={useColorModeValue("gray.200", "gray.700")}
+          align={"start"}
         >
           {children &&
             children.map((child) => (
@@ -306,9 +209,9 @@ const MobileNavItem = ({ label, children, href, onToggle, isOpen }) => {
                 {child.label}
               </Box>
             ))}
-        </Box>
+        </Stack>
       </Collapse>
-    </Box>
+    </Stack>
   );
 };
 

@@ -7,11 +7,15 @@ import Projects from "./Components/Projects";
 import Skills from "./Components/Skills";
 import TestNavbar from "./Components/TestNavbar";
 import Github from "./Components/Github";
-
+import Navbar from "./Components/Navbar";
+import Test2 from "./Components/Test2";
 function App() {
   return (
     <div className="App">
-      <TestNavbar />
+      {/* <TestNavbar />
+       */}
+      {/* <Navbar /> */}
+      <Test2 />
       <Home />
       <About />
       <Github />

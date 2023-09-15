@@ -1,106 +1,77 @@
+// Navbar.js
+import React, { useState } from "react";
 import {
   Box,
   Flex,
-  Text,
+  HStack,
   IconButton,
-  Button,
-  Stack,
-  Collapse,
-  Icon,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  useColorModeValue,
-  useDisclosure,
-  useBreakpointValue, // Import the useBreakpointValue hook
+  Link,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Text,
+  useMediaQuery,
 } from "@chakra-ui/react";
-import AnchorLink from "react-anchor-link-smooth-scroll";
-import myresume from "../downloads/Sohel_Syed_Resume.pdf";
-import {
-  HamburgerIcon,
-  CloseIcon,
-  ChevronDownIcon,
-  ChevronRightIcon,
-} from "@chakra-ui/icons";
+import { HamburgerIcon } from "@chakra-ui/icons";
 
-export default function TestNavbar() {
-  const { isOpen, onToggle } = useDisclosure();
-  const isMobile = useBreakpointValue({ base: true, md: false }); // Detect screen size
+const Navbar = () => {
+  const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <Box position={"sticky"} top={0}>
-      <Flex
-        bg={useColorModeValue("white", "gray.800")}
-        color={useColorModeValue("gray.600", "white")}
-        minH={"60px"}
-        py={{ base: 2 }}
-        px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle={"solid"}
-        borderColor={useColorModeValue("gray.200", "gray.900")}
-        align={"center"}
-      >
-        <Flex
-          flex={1}
-          ml={isMobile ? -2 : 0} // Adjust margin for mobile
-          justifyContent={isMobile ? "center" : "start"} // Center for mobile, start for desktop
-          alignItems="center"
-        >
-          {isMobile && (
-            <IconButton
-              onClick={onToggle}
-              icon={
-                isOpen ? (
-                  <CloseIcon w={3} h={3} />
-                ) : (
-                  <HamburgerIcon w={5} h={5} />
-                )
-              }
-              variant={"ghost"}
-              aria-label={"Toggle Navigation"}
-            />
+    <Flex
+      as="nav"
+      align="center"
+      justify="space-between"
+      wrap="wrap"
+      p={4}
+      bg="teal.500"
+      color="white"
+    >
+      <Box>
+        <Link href="#" _hover={{ textDecoration: "none" }}>
+          <Text fontSize="2xl">Sohel</Text>
+        </Link>
+      </Box>
+
+      {isLargerThan768 ? (
+        <HStack spacing={4}>
+          <Link href="#home">Home</Link>
+          <Link href="#about">About</Link>
+          <Link href="#skills">Skills</Link>
+          <Link href="#projects">Projects</Link>
+          <Link href="#contact">Contact</Link>
+        </HStack>
+      ) : (
+        <Box>
+          <IconButton
+            icon={<HamburgerIcon />}
+            size="md"
+            aria-label="Open Menu"
+            display={{ base: "block", md: "none" }}
+            onClick={toggleMenu}
+          />
+          {isOpen && (
+            <Menu onClose={toggleMenu}>
+              <MenuButton as={IconButton} icon={<HamburgerIcon />} />
+              <MenuList>
+                <MenuItem href="#about">About</MenuItem>
+                <MenuItem href="#skills">Skills</MenuItem>
+                <MenuItem href="#projects">Projects</MenuItem>
+                <MenuItem href="#contact">Contact</MenuItem>
+                <MenuItem href="#home">Home</MenuItem>
+              </MenuList>
+            </Menu>
           )}
-
-          <Text
-            ml={isMobile ? 2 : 0} // Add margin for mobile
-            textAlign={isMobile ? "center" : "left"}
-            fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
-          >
-            Sohel
-          </Text>
-        </Flex>
-
-        {!isMobile && (
-          <Stack flex={1} justify={"flex-end"} direction={"row"} spacing={6}>
-            <Button
-              fontSize={"sm"}
-              fontWeight={400}
-              variant={"link"}
-              className="nav-link resume"
-              id="resume-button-1"
-              onClick={() => {
-                window.open(
-                  "https://drive.google.com/file/d/1BQS12moCHECzWVibbiqGVVUZzCxFzvMS/view?usp=share_link"
-                );
-              }}
-            >
-              <a
-                id="resume-link-1"
-                className="nav-link resume"
-                href={myresume}
-                download="Sohel-Syed-Resume.pdf"
-              >
-                Resume
-              </a>{" "}
-            </Button>
-          </Stack>
-        )}
-      </Flex>
-
-      <Collapse in={isOpen} animateOpacity>
-        <MobileNav onToggle={onToggle} isOpen={isOpen} />
-      </Collapse>
-    </Box>
+        </Box>
+      )}
+    </Flex>
   );
-}
+};
+
+export default Navbar;
