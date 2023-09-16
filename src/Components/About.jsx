@@ -37,11 +37,12 @@ const About = () => {
           Sohel Syed
         </Text>
         <Container id="user-detail-intro" textAlign={"center"}>
-          <span> Hello my Name is Sohel Syed I am a Full Stack Developer</span>
-          An enthusiastic Full-stack Developer, skilled in React.js. Developing
-          websites using JavaScript, Node.js, Express.js, MongoDB. An optimistic
-          man, always ready to take a critical decision, ready to work under
-          pressure. Always ready to try some new things for optimization.
+          Hello, my name is Sohel Syed. Highly adept full-stack web developer
+          with a robust command of the MERN stack. demonstrated ability to
+          deliver successful solo and collaborative projects. Proficient in
+          harnessing generative AI and rapidly acquiring new tech stacks.
+          Combines technical prowess with good problem-solving and teamwork
+          skills.
         </Container>
         <Text></Text>
         <Button

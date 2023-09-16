@@ -57,12 +57,17 @@ export default function Navbar() {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
+        <Flex
+          flex={{ base: 1 }}
+          justify={{ base: "center", md: "start" }}
+          alignItems={"center"}
+        >
           <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"logofont"}
             color={"#93a3b2"}
             fontWeight={"bold"}
+            fontSize={"2xl"}
           >
             Sohel
           </Text>
@@ -127,7 +132,7 @@ const DesktopNav = () => {
                 onClick={onToggle}
                 p={2}
                 href={navItem.href ?? "#"}
-                fontSize={"sm"}
+                fontSize={"md"}
                 fontWeight={800}
                 color={linkColor}
                 _hover={{

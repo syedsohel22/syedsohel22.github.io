@@ -106,6 +106,7 @@ const ProjectCard = ({
       boxShadow="md"
       p={6}
       bg="white"
+      borderRadius="md"
     >
       <Box flex={1} order={imageSide === "left" ? 1 : 2}>
         <Image src={imageSrc} alt={title} maxW="100%" boxShadow="lg" />

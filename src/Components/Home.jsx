@@ -22,6 +22,7 @@ const Home = () => {
             fontFamily={"logofont"}
             className="about section"
             mb={[2, 4]}
+            p={2}
           >
             Sohel Syed
           </Heading>
@@ -35,6 +36,7 @@ const Home = () => {
           alt="sohel-syed"
           borderRadius="62% 38% 29% 71% / 35% 43% 57% 65%  "
           maxW={["80%", "70%", "50%"]}
+          p={2}
         />
       </Flex>
     </Box>
