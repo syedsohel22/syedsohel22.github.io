@@ -4,13 +4,15 @@ import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Projects from "./Components/Projects";
 import Skills from "./Components/Skills";
-import TestNavbar from "./Components/TestNavbar";
+import Navbar from "./Components/Navbar";
 import Github from "./Components/Github";
+import { Box } from "@chakra-ui/react";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <TestNavbar />
+    <Box className="App" bg="gray.100">
+      <Navbar />
 
       <Home />
       <About />
@@ -18,7 +20,8 @@ function App() {
       <Skills />
       <Projects />
       <Contact />
-    </div>
+      <Footer />
+    </Box>
   );
 }
 

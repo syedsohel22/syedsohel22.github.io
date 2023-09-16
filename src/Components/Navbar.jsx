@@ -1,40 +1,89 @@
-import { Box, Flex, Button, Heading, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Text,
+  IconButton,
+  Button,
+  Stack,
+  Collapse,
+  Icon,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  useColorModeValue,
+  useBreakpointValue,
+  useDisclosure,
+} from "@chakra-ui/react";
 
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import myresume from "../downloads/Sohel_Syed_Resume.pdf";
 
-export default function Nav() {
+import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
+
+export default function Navbar() {
+  const { isOpen, onToggle } = useDisclosure();
+
   return (
-    <Box bg={"gray.100"} px={4} id="nav-menu" position="fixed" w="100%" top={0}>
+    <Box
+      style={{
+        position: "fixed",
+        zIndex: 1000,
+        overflow: "hidden",
+        top: "0%",
+        width: "100%",
+      }}
+    >
       <Flex
-        h={16}
-        alignItems={["center", "center", "flex-start"]}
-        flexDirection={["column", "column", "row"]}
-        justifyContent={["space-between", "space-between", "flex-start"]}
+        bg={useColorModeValue("white", "gray.800")}
+        color={useColorModeValue("gray.600", "white")}
+        minH={"60px"}
+        py={{ base: 2 }}
+        px={{ base: 4 }}
+        borderBottom={1}
+        borderStyle={"solid"}
+        borderColor={useColorModeValue("gray.200", "gray.900")}
+        align={"center"}
       >
-        <Heading mt={[4, 4, 0]}>SOHEL</Heading>
         <Flex
-          gap={4}
-          mt={[4, 4, 0]}
-          alignItems={["center", "center", "flex-end"]}
+          flex={{ base: 1, md: "auto" }}
+          ml={{ base: -2 }}
+          display={{ base: "flex", md: "none" }}
         >
-          <AnchorLink href="#home">
-            <Text className="nav-link home">Home</Text>
-          </AnchorLink>
-          <AnchorLink href="#about">
-            <Text className="nav-link about"> About</Text>
-          </AnchorLink>
-          <AnchorLink href="#skills">
-            <Text className="nav-link skills">Skills</Text>
-          </AnchorLink>
-          <AnchorLink href="#projects">
-            <Text className="nav-link projects">Projects</Text>
-          </AnchorLink>
-          <AnchorLink href="#contact">
-            <Text className="nav-link contact">Contact</Text>
-          </AnchorLink>
-          {/* Resume */}
+          <IconButton
+            onClick={onToggle}
+            icon={
+              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+            }
+            variant={"ghost"}
+            aria-label={"Toggle Navigation"}
+          />
+        </Flex>
+        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
+          <Text
+            textAlign={useBreakpointValue({ base: "center", md: "left" })}
+            fontFamily={"logofont"}
+            color={"#93a3b2"}
+            fontWeight={"bold"}
+          >
+            Sohel
+          </Text>
+
+          <Flex display={{ base: "none", md: "flex" }} ml={10}>
+            <DesktopNav />
+          </Flex>
+        </Flex>
+
+        <Stack
+          flex={{ base: 1, md: 0 }}
+          justify={"flex-end"}
+          direction={"row"}
+          spacing={6}
+        >
           <Button
+            fontSize={"sm"}
+            fontWeight={"bold"}
+            bg={"#b8ccdf"}
+            color={"black"}
+            variant="solid"
             className="nav-link resume"
             id="resume-button-1"
             onClick={() => {
@@ -52,9 +101,148 @@ export default function Nav() {
               Resume
             </a>{" "}
           </Button>
-        </Flex>
-    
+        </Stack>
       </Flex>
+
+      <Collapse in={isOpen} animateOpacity>
+        <MobileNav onToggle={onToggle} isOpen={isOpen} />
+      </Collapse>
     </Box>
   );
 }
+
+const DesktopNav = () => {
+  const linkColor = useColorModeValue("gray.600", "gray.200");
+  const linkHoverColor = useColorModeValue("gray.800", "white");
+  const popoverContentBgColor = useColorModeValue("white", "gray.800");
+  const { isOpen, onToggle, onClose } = useDisclosure();
+  return (
+    <Stack direction={"row"} spacing={4}>
+      {NAV_ITEMS.map((navItem) => (
+        <Box key={navItem.label}>
+          <Popover trigger={"hover"} placement={"bottom-start"}>
+            <PopoverTrigger>
+              <Box
+                as="a"
+                onClick={onToggle}
+                p={2}
+                href={navItem.href ?? "#"}
+                fontSize={"sm"}
+                fontWeight={800}
+                color={linkColor}
+                _hover={{
+                  textDecoration: "none",
+                  color: linkHoverColor,
+                }}
+              >
+                {navItem.label}
+              </Box>
+            </PopoverTrigger>
+
+            {navItem.children && (
+              <PopoverContent
+                border={0}
+                boxShadow={"xl"}
+                bg={popoverContentBgColor}
+                p={4}
+                rounded={"xl"}
+                minW={"sm"}
+              ></PopoverContent>
+            )}
+          </Popover>
+        </Box>
+      ))}
+    </Stack>
+  );
+};
+
+const MobileNav = ({ onToggle, isOpen }) => {
+  return (
+    <Stack
+      bg={useColorModeValue("white", "gray.800")}
+      p={4}
+      display={{ md: "none" }}
+    >
+      {NAV_ITEMS.map((navItem) => (
+        <Box onClick={onToggle} key={navItem.label}>
+          <MobileNavItem key={navItem.label} {...navItem} onToggle={onToggle} />
+        </Box>
+      ))}
+    </Stack>
+  );
+};
+
+const MobileNavItem = ({ label, children, href }) => {
+  const { isOpen, onToggle } = useDisclosure();
+  return (
+    <Stack spacing={4} onClick={children && onToggle}>
+      <Box
+        as="a"
+        py={2}
+        href={href ?? "#"}
+        justifyContent="space-between"
+        alignItems="center"
+        _hover={{
+          textDecoration: "none",
+        }}
+      >
+        <Text
+          fontWeight={600}
+          color={useColorModeValue("gray.600", "gray.200")}
+        >
+          {label}
+        </Text>
+        {children && (
+          <Icon
+            as={ChevronDownIcon}
+            transition={"all .25s ease-in-out"}
+            transform={isOpen ? "rotate(180deg)" : ""}
+            w={6}
+            h={6}
+          />
+        )}
+      </Box>
+
+      <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
+        <Stack
+          mt={2}
+          pl={4}
+          borderLeft={1}
+          borderStyle={"solid"}
+          borderColor={useColorModeValue("gray.200", "gray.700")}
+          align={"start"}
+        >
+          {children &&
+            children.map((child) => (
+              <Box as="a" key={child.label} py={2} href={child.href}>
+                {child.label}
+              </Box>
+            ))}
+        </Stack>
+      </Collapse>
+    </Stack>
+  );
+};
+
+const NAV_ITEMS = [
+  {
+    label: "Home",
+    href: "#home",
+  },
+  {
+    label: "About",
+    href: "#about",
+  },
+  {
+    label: "Skills",
+    href: "#skills",
+  },
+  {
+    label: "Projects",
+    href: "#projects",
+  },
+  {
+    label: "Contact",
+    href: "#contact",
+  },
+];

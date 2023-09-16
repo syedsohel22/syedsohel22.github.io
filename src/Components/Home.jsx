@@ -9,15 +9,17 @@ const Home = () => {
         justify="center"
         justify-content="center"
         alignItems={"center"}
-        gap={[6, 10]}
+        // gap={[6, 10]}
+        gap={[12, 22]}
       >
         <Box>
           <Heading
             id="user-detail-name"
-            bgGradient="linear(to-l, #0A8CF0 52%, #36FFFF 100%)"
+            // bgGradient="linear(to-l, #0A8CF0 52%, #36FFFF 100%)"
+            bg={"#93a3b2"}
             bgClip="text"
             fontSize={["4xl", "5xl", "6xl"]}
-            fontWeight="extrabold"
+            fontFamily={"logofont"}
             className="about section"
             mb={[2, 4]}
           >

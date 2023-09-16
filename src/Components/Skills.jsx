@@ -4,7 +4,7 @@ import postman from "../downloads/postman-png.png";
 import vscode from "../downloads/vscode-png.png";
 const Skills = () => {
   return (
-    <Box id="skills" w="100%" bg={"gray.100"} py={10}>
+    <Box id="skills" w="100%" bg={"gray.100"} py={20}>
       <Box px={10}>
         <Heading textAlign="center" mb={5}>
           Skills

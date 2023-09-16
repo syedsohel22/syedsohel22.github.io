@@ -1,4 +1,4 @@
-import { Center, HStack, Img, Stack, color } from "@chakra-ui/react";
+import { Center, Img, Stack } from "@chakra-ui/react";
 import React from "react";
 import GitHubCalendar from "react-github-calendar";
 
@@ -31,7 +31,7 @@ const Github = () => {
         <p>
           <Img
             align="center"
-            src="https://github-readme-stats.vercel.app/api?username=syedsohel22&show_icons=true&locale=en&theme=buefy&bg_color=faf5ff&border_radius=10&border_color=none&hide_border=true"
+            src="https://github-readme-stats.vercel.app/api?username=syedsohel22&show_icons=true&locale=en&border_radius=10&border_color=none&hide_border=true"
             alt="syedsohel22"
             id="github-stats-card"
           />
@@ -48,7 +48,7 @@ const Github = () => {
         <p>
           <Img
             align="center"
-            src="https://github-readme-streak-stats.herokuapp.com/?user=syedsohel22&"
+            src="https://github-readme-streak-stats.herokuapp.com/?user=syedsohel22&&theme=blue&bg_color=faf5ff&border_radius=10&border_color=none&hide_border=true"
             alt="syedsohel22"
             id="github-streak-stats"
           />
