@@ -1,6 +1,14 @@
 import React from "react";
 
-import { Box, Button, Flex, Heading, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  Heading,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import myresume from "../downloads/Sohel_Syed_Resume.pdf";
 const About = () => {
   return (
@@ -26,17 +34,17 @@ const About = () => {
         >
           Sohel Syed
         </Text>
-        <Text id="user-detail-intro" textAlign={"center"}>
+        <Container id="user-detail-intro" textAlign={"center"}>
           <span> Hello my Name is Sohel Syed I am a Full Stack Developer</span>
-          <br />
+     
           An enthusiastic Full-stack Developer, skilled in React.js. Developing{" "}
-          <br />
+        
           websites using JavaScript, Node.js, Express.js, MongoDB. An optimistic{" "}
-          <br />
+        
           man, always ready to take a critical decision, ready to work under{" "}
-          <br />
-          pressure. Always ready to try some new things for optimization. <br />
-        </Text>
+   
+          pressure. Always ready to try some new things for optimization. 
+        </Container>
         <Text></Text>
         <Button
           id="resume-button-2"

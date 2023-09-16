@@ -116,7 +116,8 @@ const DesktopNav = () => {
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
-              <AnchorLink
+              <Box
+                as="a"
                 onClick={onToggle}
                 p={2}
                 href={navItem.href ?? "#"}
@@ -129,7 +130,7 @@ const DesktopNav = () => {
                 }}
               >
                 {navItem.label}
-              </AnchorLink>
+              </Box>
             </PopoverTrigger>
 
             {navItem.children && (
@@ -165,10 +166,12 @@ const MobileNav = ({ onToggle, isOpen }) => {
   );
 };
 
-const MobileNavItem = ({ label, children, href, onToggle, isOpen }) => {
+const MobileNavItem = ({ label, children, href }) => {
+  const { isOpen, onToggle } = useDisclosure();
   return (
     <Stack spacing={4} onClick={children && onToggle}>
       <Box
+        as="a"
         py={2}
         href={href ?? "#"}
         justifyContent="space-between"

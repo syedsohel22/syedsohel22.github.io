@@ -10,7 +10,9 @@ import {
 } from "@chakra-ui/react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import React from "react";
-
+import gardenGurus from "../downloads/garden-gurus.png";
+import travelbook from "../downloads/travelbook.png";
+import medicure from "../downloads/medicure.png";
 const projectData = [
   {
     title: "Health Prime - Clone of TATA 1mg.com",
@@ -24,35 +26,49 @@ const projectData = [
     flip: false,
   },
   {
-    title: "Project 2",
+    title: "TravelBook (Hotel room booking app)",
     description:
-      "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-    techStack: ["React", "Chakra UI"],
-    githubLink: "https://github.com/example/project2",
-    deployedLink: "https://example-project2.netlify.app/",
-    imageSrc: "https://via.placeholder.com/300x200",
+      "Hotel room booking web application allow user to book hotel rooms",
+    techStack: [
+      "React",
+      "Redux",
+      "Chakra UI",
+      "MongoDB",
+      "Express.js",
+      "Node.js",
+    ],
+    githubLink: "https://github.com/syedsohel22/travelbook",
+    deployedLink: "https://travelbook-alpha.vercel.app/",
+    imageSrc: travelbook,
     flip: false,
   },
 
   {
-    title: "Project 3",
+    title: "Garden Gurus (Blog app)",
     description:
-      "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-    techStack: ["React", "Chakra UI"],
+      "GardenGuru is an open-source blogging website where anyone can write, read and have text conversations about botanical plants and herbs. It helps people know the exact knowledge of nurturing any plant better and more efficiently.",
+    techStack: [
+      "React",
+      "Redux",
+      "Chakra UI",
+      "MongoDB",
+      "Express.js",
+      "Node.js",
+    ],
     githubLink: "https://github.com/example/project2",
     deployedLink: "https://example-project2.netlify.app/",
-    imageSrc: "https://via.placeholder.com/300x200",
+    imageSrc: gardenGurus,
     flip: true,
   },
 
   {
-    title: "Project 4",
+    title: "Medicure (Doctor appointment booking app)",
     description:
-      "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-    techStack: ["React", "Chakra UI"],
+      "Application allows users to search for doctors by name, specialty, or location, view their availability, and book appointments online.",
+    techStack: ["React", "Redux", "Chakra UI", "Json-Server"],
     githubLink: "https://github.com/example/project2",
     deployedLink: "https://example-project2.netlify.app/",
-    imageSrc: "https://via.placeholder.com/300x200",
+    imageSrc: medicure,
     flip: true,
   },
   // Add more project data objects here for additional projects
@@ -60,7 +76,7 @@ const projectData = [
 
 const Projects = () => {
   return (
-    <Center id="projects" py={20} bg="gray.100" >
+    <Center id="projects" py={20} bg="gray.100">
       <SimpleGrid columns={[1, 1, 2]} spacing={6} w="90%" m="auto">
         {projectData.map((project, index) => (
           <ProjectCard key={index} {...project} />
