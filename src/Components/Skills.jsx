@@ -1,6 +1,7 @@
 import { Box, Heading, Image, Text, Wrap, WrapItem } from "@chakra-ui/react";
 import React from "react";
-
+import postman from "../downloads/postman-png.png";
+import vscode from "../downloads/vscode-png.png";
 const Skills = () => {
   return (
     <Box id="skills" w="100%" bg={"gray.100"} py={10}>
@@ -24,6 +25,11 @@ const Skills = () => {
           src="https://img.icons8.com/color/96/javascript--v1.png"
           alt="JavaScript"
           name="JavaScript"
+        />
+        <SkillCard
+          src="https://img.icons8.com/color/96/typescript.png"
+          alt="Typescript"
+          name="Typescript"
         />
         <SkillCard
           src="https://img.icons8.com/color/96/react-native.png"
@@ -55,6 +61,38 @@ const Skills = () => {
           alt="MongoDB"
           name="MongoDB"
         />
+        <SkillCard
+          src="https://img.icons8.com/color/96/nextjs.png"
+          alt="NextJS"
+          name="NextJS"
+        />
+        <SkillCard
+          src="https://img.icons8.com/color/96/tailwindcss.png"
+          alt="tailwindCSS"
+          name="TailwindCSS"
+        />
+        <SkillCard
+          src="https://img.icons8.com/color/96/material-ui.png"
+          alt="Material-UI"
+          name="Material-UI"
+        />
+      </Wrap>
+      <Box px={10}>
+        <Heading textAlign="center" mb={5}>
+          Tools
+        </Heading>
+      </Box>
+      <Wrap justify="center" spacing={5} px={5}>
+        {/* add tools here */}
+        <SkillCard
+          src="https://img.icons8.com/color/96/git.png"
+          alt="Git"
+          name="Git"
+        />
+
+        <SkillCard src={vscode} alt="vs-code" name="vs-code" />
+
+        <SkillCard src={postman} alt="Postman" name="Postman" />
       </Wrap>
     </Box>
   );
