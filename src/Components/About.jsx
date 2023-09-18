@@ -13,7 +13,7 @@ const About = () => {
   return (
     <Flex
       id="about"
-      className="about section"
+      className="about section nav-link about"
       w="100%"
       bg="gray.100"
       alignItems={"center"}

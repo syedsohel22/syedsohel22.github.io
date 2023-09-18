@@ -2,7 +2,7 @@ import { Box, Flex, Heading, Img } from "@chakra-ui/react";
 import React from "react";
 const Home = () => {
   return (
-    <Box id="home" w="100%" px={[4, 8, 16]} py={20}>
+    <Box id="home" w="100%" className="nav-link home" px={[4, 8, 16]} py={20}>
       <Flex
         direction={["column", "column", "row"]}
         align={["center", "center", "flex-start"]}

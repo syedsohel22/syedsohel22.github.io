@@ -76,7 +76,7 @@ const projectData = [
 
 const Projects = () => {
   return (
-    <Center id="projects" py={20} bg="gray.100">
+    <Center id="projects" className="nav-link projects" py={20} bg="gray.100">
       <SimpleGrid columns={[1, 1, 2]} spacing={6} w="90%" m="auto">
         {projectData.map((project, index) => (
           <ProjectCard key={index} {...project} />

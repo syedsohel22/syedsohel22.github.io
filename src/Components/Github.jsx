@@ -41,7 +41,7 @@ const Github = () => {
             align="center"
             src="https://github-readme-stats.vercel.app/api/top-langs?username=syedsohel22&show_icons=true&locale=en&layout=compact"
             alt="syedsohel22"
-            id="github-stats-card"
+            id="github-top-langs"
           />
         </p>
 

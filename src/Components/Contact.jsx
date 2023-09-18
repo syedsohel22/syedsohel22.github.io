@@ -13,7 +13,7 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <Center id="contact" py={10} bg="gray.100">
+    <Center id="contact" className="nav-link contact" py={10} bg="gray.100">
       <Box w="90%" m="auto">
         <Heading mb={4}>Contact Me</Heading>
         <SimpleGrid columns={[1, 2]} spacing={6}>

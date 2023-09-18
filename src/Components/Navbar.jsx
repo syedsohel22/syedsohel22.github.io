@@ -24,6 +24,7 @@ export default function Navbar() {
 
   return (
     <Box
+      id="nav-menu"
       style={{
         position: "fixed",
         zIndex: 1000,
@@ -124,7 +125,7 @@ const DesktopNav = () => {
   return (
     <Stack direction={"row"} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
+        <Box key={navItem.label} id={navItem.id}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
               <Box
@@ -233,21 +234,26 @@ const NAV_ITEMS = [
   {
     label: "Home",
     href: "#home",
+    id: "home",
   },
   {
     label: "About",
     href: "#about",
+    id: "about",
   },
   {
     label: "Skills",
     href: "#skills",
+    id: "skills",
   },
   {
     label: "Projects",
     href: "#projects",
+    id: "projects",
   },
   {
     label: "Contact",
     href: "#contact",
+    id: "contact",
   },
 ];
