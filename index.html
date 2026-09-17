@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Character Encoding & Viewport -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Primary SEO Meta Tags -->
+  <title>Syed Sohel | Full Stack Software Engineer</title>
+  <meta name="title" content="Syed Sohel | Full Stack Software Engineer" />
+  <meta name="description" content="Portfolio of Syed Sohel, Software Engineer specializing in Full Stack Web Development, React, Node.js, PostgreSQL, and scalable architectures." />
+  <meta name="keywords" content="Syed Sohel, Full Stack Developer, Software Engineer, Learnbay, HeyCoach, LeanQuality Solutions, React Developer, Node.js Developer, PostgreSQL" />
+  <meta name="author" content="Syed Sohel" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://syedsohel22.github.io/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://syedsohel22.github.io/" />
+  <meta property="og:title" content="Syed Sohel | Full Stack Software Engineer" />
+  <meta property="og:description" content="Professional portfolio and career history of Syed Sohel, Software Engineer." />
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://syedsohel22.github.io/" />
+  <meta name="twitter:title" content="Syed Sohel | Full Stack Software Engineer" />
+  <meta name="twitter:description" content="Professional portfolio and career history of Syed Sohel, Software Engineer." />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Syed Sohel",
+    "url": "https://syedsohel22.github.io/",
+    "jobTitle": "Software Engineer",
+    "sameAs": [
+      "https://www.linkedin.com/in/sohelsyed22/",
+      "https://github.com/syedsohel22"
+    ],
+    "knowsAbout": [
+      "JavaScript",
+      "TypeScript",
+      "React.js",
+      "React Native",
+      "Node.js",
+      "PostgreSQL",
+      "MERN Stack",
+      "RESTful APIs"
+    ]
+  }
+  </script>
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Inline CSS -->
+  <style>
+    /* ==========================================================================
+       Reset & Variables
+       ========================================================================== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --bg-card: #1e293b;
+      --bg-card-hover: #26334d;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --border-color: #334155;
+      --font-base: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --transition: all 0.25s ease-in-out;
+      --nav-height: 70px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--nav-height);
+    }
+
+    body {
+      font-family: var(--font-base);
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Typography & Core Elements */
+    h1, h2, h3, h4 {
+      color: var(--text-main);
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    p {
+      color: var(--text-muted);
+    }
+
+    .section {
+      padding: 5.5rem 0;
+    }
+
+    .section-dark {
+      background-color: var(--bg-secondary);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 45px;
+      height: 3px;
+      background-color: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.4rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .btn-solid {
+      background-color: var(--accent);
+      color: var(--bg-primary);
+      border: 1px solid var(--accent);
+    }
+
+    .btn-solid:hover {
+      background-color: #0284c7;
+      border-color: #0284c7;
+      color: #ffffff;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background-color: var(--accent-glow);
+    }
+
+    /* ==========================================================================
+       Navbar
+       ========================================================================== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      height: var(--nav-height);
+      z-index: 1000;
+      background-color: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-main);
+      text-decoration: none;
+      font-family: var(--font-mono);
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent);
+    }
+
+    .nav-links .btn-primary {
+      padding: 0.45rem 1rem;
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      color: var(--accent);
+    }
+
+    .nav-links .btn-primary:hover {
+      background-color: var(--accent);
+      color: var(--bg-primary);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-main);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       Hero Section
+       ========================================================================== */
+    .hero-section {
+      padding: 7.5rem 0 5.5rem 0;
+    }
+
+    .hero-tag {
+      font-family: var(--font-mono);
+      color: var(--accent);
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      max-width: 650px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* ==========================================================================
+       About Section
+       ========================================================================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      margin-bottom: 1.25rem;
+      font-size: 1.05rem;
+    }
+
+    .about-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .highlight-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      padding: 1.25rem 1.5rem;
+      border-radius: 8px;
+    }
+
+    .highlight-num {
+      display: block;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+
+    .highlight-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       Skills Section
+       ========================================================================== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .skill-category {
+      background-color: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.75rem;
+      transition: var(--transition);
+    }
+
+    .skill-category:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .skill-category h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.5rem;
+    }
+
+    .skill-list {
+      list-style: none;
+    }
+
+    .skill-list li {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+      position: relative;
+      padding-left: 1.25rem;
+    }
+
+    .skill-list li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       Experience & Education Section
+       ========================================================================== */
+    .timeline {
+      position: relative;
+      border-left: 2px solid var(--border-color);
+      margin-left: 1rem;
+      padding-left: 2rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3.25rem;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -2.45rem;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--accent);
+      border: 3px solid var(--bg-primary);
+    }
+
+    .timeline-content h4 {
+      font-size: 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .timeline-company {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .timeline-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      display: block;
+      margin: 0.35rem 0 0.85rem 0;
+    }
+
+    .timeline-bullets {
+      list-style: none;
+      margin-bottom: 1rem;
+    }
+
+    .timeline-bullets li {
+      position: relative;
+      padding-left: 1.25rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .experience-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .experience-skills span {
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      color: var(--text-main);
+      background-color: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .subsection-divider {
+      margin: 4.5rem 0 2.5rem 0;
+      font-size: 1.5rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .subsection-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background-color: var(--border-color);
+    }
+
+    /* ==========================================================================
+       Contact & Footer
+       ========================================================================== */
+    .contact-container {
+      text-align: center;
+      max-width: 650px;
+    }
+
+    .contact-container .section-title::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .contact-desc {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer {
+      border-top: 1px solid var(--border-color);
+      padding: 2.5rem 0;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-socials a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .footer-socials a:hover {
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       Responsive Breakpoints
+       ========================================================================== */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.4rem;
+      }
+      
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .mobile-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-primary);
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.25rem;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="logo">SS<span>.</span></a>
+      <button class="mobile-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact" class="btn-primary">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-content">
+        <p class="hero-tag">Hello, I'm</p>
+        <h1 class="hero-title">Syed Sohel</h1>
+        <h2 class="hero-subtitle">Full Stack Software Engineer</h2>
+        <p class="hero-desc">
+          Building resilient full-stack web applications, scalable backend systems, 
+          and optimized user workflows with JavaScript, TypeScript, PostgreSQL, and React.
+        </p>
+        <div class="hero-actions">
+          <a href="https://www.linkedin.com/in/sohelsyed22/" target="_blank" rel="noopener noreferrer" class="btn btn-solid">LinkedIn</a>
+          <a href="https://github.com/syedsohel22" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub</a>
+          <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I am a Software Engineer based in Bengaluru focused on engineering scalable cross-platform systems, 
+              automating workflow pipelines, and designing high-throughput relational data schemas.
+            </p>
+            <p>
+              From architecting internal operational dashboards to streamlining external candidate portals and lead management flows, 
+              I focus on solving real operational bottlenecks through clean, measurable performance optimizations.
+            </p>
+          </div>
+          <div class="about-highlights">
+            <div class="highlight-card">
+              <span class="highlight-num">Full-Stack</span>
+              <span class="highlight-label">MERN Stack, React Native & Modern Web</span>
+            </div>
+            <div class="highlight-card">
+              <span class="highlight-num">Data & APIs</span>
+              <span class="highlight-label">PostgreSQL, Optimized Queries & REST</span>
+            </div>
+            <div class="highlight-card">
+              <span class="highlight-num">Automation</span>
+              <span class="highlight-label">Workflow Automation & Integrated APIs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section section-dark">
+      <div class="container">
+        <h2 class="section-title">Technical Expertise</h2>
+        <div class="skills-grid">
+          
+          <div class="skill-category">
+            <h3>Frontend & Mobile</h3>
+            <ul class="skill-list">
+              <li>React.js / Next.js</li>
+              <li>React Native</li>
+              <li>JavaScript (ES6+) / TypeScript</li>
+              <li>Redux / State Management</li>
+              <li>Responsive UI & Performance Optimization</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>Backend & Database</h3>
+            <ul class="skill-list">
+              <li>Node.js / Express.js</li>
+              <li>PostgreSQL / MySQL</li>
+              <li>MongoDB / MERN Stack</li>
+              <li>RESTful API Architecture</li>
+              <li>Firebase Integration</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>Tools & Automation</h3>
+            <ul class="skill-list">
+              <li>Workflow Automation (n8n)</li>
+              <li>Prompt Engineering</li>
+              <li>Google Calendar API & Third-party Integrations</li>
+              <li>Git & Automated Development Workflows</li>
+              <li>Computer Networking & Systems</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="timeline">
+
+          <!-- Learnbay -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Software Engineer <span class="timeline-company">@ Learnbay</span></h4>
+              <span class="timeline-meta">Jul 2025 – Present · Bengaluru, Karnataka, India (On-site)</span>
+              <ul class="timeline-bullets">
+                <li>Developing high-performance software modules and scalable database interactions.</li>
+                <li>Leveraging PostgreSQL and modern prompt engineering workflows for internal and platform-facing components.</li>
+              </ul>
+              <div class="experience-skills">
+                <span>PostgreSQL</span>
+                <span>Prompt Engineering</span>
+                <span>Backend Engineering</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- LeanQuality Solutions -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Software Engineer <span class="timeline-company">@ LeanQuality Solutions (I) Pvt. Ltd.</span></h4>
+              <span class="timeline-meta">Mar 2025 – Jul 2025 · 5 mos · Pune District, Maharashtra, India (On-site)</span>
+              <ul class="timeline-bullets">
+                <li>Developed and maintained scalable cross-platform applications using React Native integrated with Firebase for high availability and robust data synchronization.</li>
+                <li>Designed intuitive user interfaces and navigation flows, boosting application performance and responsiveness.</li>
+                <li>Resolved complex customer-reported issues, created emergency patches, and enhanced offline capabilities through local storage.</li>
+                <li>Automated Git repository management workflows with n8n, integrating third-party APIs to streamline engineering processes.</li>
+              </ul>
+              <div class="experience-skills">
+                <span>React Native</span>
+                <span>Firebase</span>
+                <span>MERN Stack</span>
+                <span>n8n Workflows</span>
+                <span>Prompt Engineering</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- HeyCoach -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Full Stack Web Developer <span class="timeline-company">@ HeyCoach</span></h4>
+              <span class="timeline-meta">Nov 2023 – Mar 2025 · 1 yr 5 mos · Bengaluru, Karnataka, India (On-site)</span>
+              <ul class="timeline-bullets">
+                <li><strong>Lead Management:</strong> Implemented systems that increased lead management efficiency by 15% with accurate tracking and automated assignment.</li>
+                <li><strong>Automated Interaction Detection:</strong> Built detection tools improving management accuracy by 20% by identifying underperforming interactions.</li>
+                <li><strong>HR Operations:</strong> Built tools that streamlined candidate workflows, reducing manual errors by 25%.</li>
+                <li><strong>Calendar Integration:</strong> Integrated the Google Calendar API directly into the portal for native scheduling and automated invites.</li>
+                <li><strong>Testing Automation:</strong> Devised a mock data generation pipeline, accelerating feature testing turnaround by 30%.</li>
+                <li><strong>Monitoring Dashboards:</strong> Built reporting dashboards that provided actionable managerial oversight (+10% monitoring efficacy).</li>
+                <li><strong>Search & UX:</strong> Optimized database search indexing, reducing search response times by 20% and driving user satisfaction up by 12%.</li>
+              </ul>
+              <div class="experience-skills">
+                <span>React.js</span>
+                <span>Node.js</span>
+                <span>Google Calendar API</span>
+                <span>Database Indexing</span>
+                <span>Prompt Engineering</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kommineni Infotech -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Customer Support Engineer <span class="timeline-company">@ Kommineni Infotech P Ltd.</span></h4>
+              <span class="timeline-meta">May 2018 – Jul 2019 · 1 yr 3 mos · India (On-site)</span>
+              <ul class="timeline-bullets">
+                <li>Diagnosed hardware, software, and networking issues to maintain infrastructure availability.</li>
+                <li>Documented comprehensive incident reports and customer support workflows.</li>
+              </ul>
+              <div class="experience-skills">
+                <span>Computer Networks</span>
+                <span>Technical Troubleshooting</span>
+                <span>Report Writing</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Education & Credentials Subsection -->
+        <h3 class="subsection-divider">Education & Credentials</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Master of Computer Applications (MCA)</h4>
+              <span class="timeline-meta">Postgraduate Degree</span>
+              <p>Specialization in software engineering methodologies, distributed systems, and relational databases.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Bachelor of Computer Applications (BCA)</h4>
+              <span class="timeline-meta">Undergraduate Degree</span>
+              <p>Foundations in object-oriented programming, computer networks, data structures, and web technologies.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-dark">
+      <div class="container contact-container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="contact-desc">
+          I am always open to exploring new engineering opportunities, collaborations, and technical discussions. Connect with me directly or view my code.
+        </p>
+        <div class="contact-actions">
+          <a href="https://www.linkedin.com/in/sohelsyed22/" target="_blank" rel="noopener noreferrer" class="btn btn-solid">Connect on LinkedIn</a>
+          <a href="https://github.com/syedsohel22" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Explore GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/sohelsyed22/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/syedsohel22" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+      <p>&copy; 2026 Syed Sohel. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Inline JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mobile Navigation Toggle
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('open');
+        });
+
+        // Close menu on navigation link click
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+          });
+        });
+      }
+
+      // Active Section Highlighting on Scroll
+      const sections = document.querySelectorAll('section');
+      const navItems = document.querySelectorAll('.nav-links a:not(.btn-primary)');
+
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 110;
+          if (window.pageYOffset >= sectionTop) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        navItems.forEach(item => {
+          item.classList.remove('active');
+          if (item.getAttribute('href') === `#${current}`) {
+            item.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
